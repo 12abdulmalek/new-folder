@@ -1,15 +1,17 @@
 const bookList = document.getElementById('book-list');
 
-const searchBookName = searchResult => {
-    const search=searchResult.value;
+// const searchBookName = searchResult => {
   
-    const url = `http://openlibrary.org/search.json?q=${search}`;
-    return url;
-}
+  
+//     const url = `http://openlibrary.org/search.json?q=${search}`;
+//     return url;
+// }
 
 const books = () =>{
     const searchText=document.getElementById('search-text');
-      const url=searchBookName(searchText);
+    const search=searchText.value;
+    const url = `http://openlibrary.org/search.json?q=${search}`;
+    //   const url=searchBookName(searchText);
     //   searchText.value='';
    // const url = `http://openlibrary.org/search.json?q=${searchText}`;
     fetch(url)
