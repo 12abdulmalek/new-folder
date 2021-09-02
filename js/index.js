@@ -10,7 +10,7 @@ const searchBookName = searchResult => {
 const books = () =>{
     const searchText=document.getElementById('search-text');
       const url=searchBookName(searchText);
-      searchText.value='';
+    //   searchText.value='';
    // const url = `http://openlibrary.org/search.json?q=${searchText}`;
     fetch(url)
     .then(res => res.json())
@@ -23,10 +23,10 @@ const booksDetails = books =>{
    let c=0;
    bookList.textContent='';
    const book=books.docs;
-   if(book.length===0){
-       document.getElementById('show-result').style.display='block';
-       document.getElementById('count-book').style.display='none';
-   }
+//    if(book.length===0){
+//        document.getElementById('show-result').style.display='block';
+//        document.getElementById('count-book').style.display='none';
+//    }
     book.forEach(item => {
         count++;
         const booksUrl = `https://covers.openlibrary.org/b/id/${item.cover_i}-L.jpg`;
@@ -49,9 +49,9 @@ const booksDetails = books =>{
           </div>
         `;
         bookList.appendChild(div);
-        document.getElementById('show-result').style.display='none';
-        document.getElementById('count-book').style.display='block';
-        document.getElementById('count-book').innerText=`displaying 1 - ${count} of about ${books.numFound} results`;
+        // document.getElementById('show-result').style.display='none';
+        // document.getElementById('count-book').style.display='block';
+        // document.getElementById('count-book').innerText=`displaying 1 - ${count} of about ${books.numFound} results`;
     });
     // console.log(book.docs[0].title);
 }
