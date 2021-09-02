@@ -10,11 +10,11 @@ const bookList = document.getElementById('book-list');
 const books = () =>{
     const searchText=document.getElementById('search-text');
     const search=searchText.value;
-    const teet = `http://openlibrary.org/search.json?q=${search}`;
+    const face = `http://openlibrary.org/search.json?q=${search}`;
     //   const url=searchBookName(searchText);
     //   searchText.value='';
    // const url = `http://openlibrary.org/search.json?q=${searchText}`;
-    fetch(teet)
+    fetch(face)
     .then(res => res.json())
     .then(data =>booksDetails(data));
 }
